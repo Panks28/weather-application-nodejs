@@ -4,6 +4,7 @@ const hbs = require('hbs');
 const app = express();
 const forecast= require ('./Utilities/forecast.js');
 const geocode = require('./Utilities/geocode.js');
+const port = process.env.PORT || 3000;
 
 // Defining the path directory of the folder that contains the static assets of the webiste.
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -107,7 +108,7 @@ app.get('*', function (req,res) {
 
 
 // Initializing the Server at which the website content will be loaded
-app.listen (3000, function () {
+app.listen (port, function () {
     console.log("Loaded at Port 3000 successfully!")
 });
 
